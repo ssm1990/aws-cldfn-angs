@@ -4,7 +4,8 @@ $GITHUB_REPO = "ssm1990/aws-cldfn-angs"
 $GITHUB_CONNECTION_ARN = "arn:aws:codeconnections:ap-south-1:314129306412:connection/4a9ee36f-b5e7-4b9b-913b-d7175ad26362"  # Replace with your actual Connection ARN
 
 aws cloudformation delete-stack --stack-name $STACK_NAME --region ap-south-1
-Start-Sleep -Seconds 60
+#Start-Sleep -Seconds 60
+aws cloudformation wait stack-delete-complete --stack-name $STACK_NAME --region ap-south-1
 
 aws cloudformation deploy `
   --template-file infrastructure/infrastructure.yml `
