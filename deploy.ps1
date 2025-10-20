@@ -1,7 +1,7 @@
 # Deploy Angular Static App Infrastructure
 $STACK_NAME = "angular-static-app"
 $GITHUB_REPO = "ssm1990/aws-cldfn-angs"
-$GITHUB_CONNECTION_ARN = "arn:aws:codestar-connections:ap-south-1:314129306412:connection/20b824e1-13a6-4583-9295-2d6156bdc345"  # Replace with your actual Connection ARN
+$GITHUB_CONNECTION_ARN = "arn:aws:codeconnections:ap-south-1:314129306412:connection/4a9ee36f-b5e7-4b9b-913b-d7175ad26362"  # Replace with your actual Connection ARN
 
 aws cloudformation delete-stack --stack-name $STACK_NAME --region ap-south-1
 Start-Sleep -Seconds 60
