@@ -103,7 +103,7 @@ Resources:
               ActionTypeId:
                 Category: Source
                 Owner: AWS
-                Provider: CodeStarSourceConnection
+                Provider: GitHub
                 Version: '1'
               Configuration:
                 ConnectionArn: !Ref GitHubConnectionArn
@@ -213,9 +213,8 @@ Resources:
                   - codebuild:StartBuild
                 Resource: !GetAtt CodeBuildProject.Arn
               - Effect: Allow
-                Action:
-                  - codestar-connections:UseConnection
-                Resource: '*'
+                Action: codestar-connections:UseConnection
+                Resource: !Ref GitHubConnectionArn
 
 Outputs:
   WebsiteURL:
