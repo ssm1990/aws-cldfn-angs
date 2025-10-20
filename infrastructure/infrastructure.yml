@@ -213,8 +213,9 @@ Resources:
                   - codebuild:StartBuild
                 Resource: !GetAtt CodeBuildProject.Arn
               - Effect: Allow
-                Action: codestar-connections:UseConnection
-                Resource: !Ref GitHubConnectionArn
+                Action:
+                  - codestar-connections:UseConnection
+                Resource: '*'
 
 Outputs:
   WebsiteURL:
